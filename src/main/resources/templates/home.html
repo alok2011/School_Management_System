@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http:www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Landing Page</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<style>
+.carousel-item {
+	height: 500px;
+}
+
+.banner {
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+}
+
+.carousel-inner img {
+	width: 80%;
+	height: 500px;
+	object-fit: cover;
+	margin: auto;
+}
+
+.form-container {
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 20px;
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+</style>
+</head>
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<a class="navbar-brand" href="#">Raavi International School</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#updates">Updates</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#rank-holders">Rank
+							Holders</a></li>
+
+					<li class="nav-item dropdown">
+						<button class=" btn btn-outline-success  "
+							id="navbarDropdownMenuLink" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="true">Login</button>
+
+						<div class="dropdown-menu"
+							aria-labelledby="navbarDropdownMenuLink">
+							<form action="student/login" method="post" role="button">
+								<button type="submit" class="dropdown-item">Student
+									Login</button>
+							</form>
+							<form action="teacher/login" method="post" role="button">
+								<button type="submit" class="dropdown-item">Teacher
+									Login</button>
+							</form>
+							<form action="admin/login" method="post" role="button">
+								<button type="submit" class="dropdown-item">Admin Login</button>
+							</form>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- slider -->
+
+	<div id="bannerSlider" class="carousel slide my-2 container"
+		data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="banner"
+					style="background-image: url('https://www.greatschools.org/gk/wp-content/uploads/2014/03/The-school-visit-what-to-look-for-what-to-ask-1-750x325.jpg');">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>First Banner Title</h5>
+						<p>Some quick example text to build on the first banner.</p>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="banner"
+					style="background-image: url('https://raghavfoundation.org.in/wp-content/uploads/2023/05/school-image.jpg');">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Second Banner Title</h5>
+						<p>Some quick example text to build on the second banner.</p>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="banner"
+					style="background-image: url('https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2020/news/thumbphpjpg-1593229652.jpeg&w=900&height=601');">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Third Banner Title</h5>
+						<p>Some quick example text to build on the third banner.</p>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="banner"
+					style="background-image: url('https://c9.shauryasoft.com/media/bny-contentpage_124_0_50.jpg?637530549829935635');">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Fourth Banner Title</h5>
+						<p>Some quick example text to build on the fourth banner.</p>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="banner"
+					style="background-image: url('https://cloud9.shauryasoft.com/media/contentpage_33_36_55.jpg?637113139330805571?dZytk');">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Fifth Banner Title</h5>
+						<p>Some quick example text to build on the fifth banner.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button"
+			data-bs-target="#bannerSlider" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+				class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button"
+			data-bs-target="#bannerSlider" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span> <span
+				class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<a class=" btn " th:href="@{/addadmin}">add admin</a>
+	<!-- Updates Section -->
+	<section id="updates" class="my-5">
+		<div class="container">
+			<h2>Updates</h2>
+			<ul class="list-group">
+				<li class="list-group-item">New semester starts on September
+					25th.</li>
+				<li class="list-group-item">Annual sports day scheduled for
+					October 15th.</li>
+				<li class="list-group-item">Parent-Teacher meeting on October
+					5th.</li>
+			</ul>
+		</div>
+	</section>
+
+
+
+	<!-- Gallery Section -->
+	<section id="gallery" class="my-5">
+		<div class="container">
+			<h2>Gallery</h2>
+			<div class="row">
+				<div class="col-md-4">
+					<img src="https://via.placeholder.com/300" class="img-fluid"
+						alt="Gallery Image 1">
+				</div>
+				<div class="col-md-4">
+					<img src="https://via.placeholder.com/300" class="img-fluid"
+						alt="Gallery Image 2">
+				</div>
+				<div class="col-md-4">
+					<img src="https://via.placeholder.com/300" class="img-fluid"
+						alt="Gallery Image 3">
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Rank Holders Section -->
+	<section id="rank-holders" class="my-5">
+		<div class="container">
+			<h2>Rank Holders</h2>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card mb-3">
+						<div class="card-body">
+							<h5 class="card-title">Student Name 1</h5>
+							<p class="card-text">Rank: 1 | Score: 98%</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card mb-3">
+						<div class="card-body">
+							<h5 class="card-title">Student Name 2</h5>
+							<p class="card-text">Rank: 2 | Score: 95%</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card mb-3">
+						<div class="card-body">
+							<h5 class="card-title">Student Name 3</h5>
+							<p class="card-text">Rank: 3 | Score: 93%</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About Section -->
+	
+	<section id="about" class="container" >
+		<div >
+			
+				<h2>About Us</h2>
+				<p>Welcome to Raavi International School!</p>
+
+				<p>At Raavi International School, we are dedicated to fostering
+					a nurturing and dynamic learning environment where every student
+					can thrive. Founded in 1999, our school has a rich history of
+					academic excellence, innovative teaching methods, and a commitment
+					to developing well-rounded individuals.</p>
+
+				<h6>Our Mission</h6>
+				<p>Our mission is to inspire and empower students to reach their
+					full potential through a balanced curriculum that emphasizes
+					intellectual, emotional, and social growth. We believe that
+					education goes beyond textbooks; it’s about cultivating curiosity,
+					resilience, and a lifelong love of learning.</p>
+
+				<h6>Our Values</h6>
+				<p>Inclusivity: We celebrate diversity and strive to create a
+					welcoming atmosphere for all students, families, and staff.
+					Excellence: We are committed to high academic standards and
+					continuous improvement in our teaching practices. Community: We
+					believe in the importance of strong partnerships between students,
+					families, and the community to support our learners. Innovation: We
+					embrace new ideas and technology to enhance our educational
+					programs and engage students in meaningful ways. Our Programs We
+					offer a comprehensive range of academic programs, extracurricular
+					activities, and support services tailored to meet the needs of our
+					students. From [list a few specific programs, such as STEM
+					initiatives, arts, sports, etc.], we aim to provide opportunities
+					that spark passion and encourage personal growth.</p>
+				<h6>Join Us</h6>
+				<p>We invite you to explore our website to learn more about our
+					dedicated staff, engaging curriculum, and vibrant community.
+					Whether you are a prospective student, a current family, or a
+					community member, we are excited to partner with you in the journey
+					of education. Thank you for considering Raavi International School.
+					Together, we can inspire the leaders of tomorrow!</p>
+			</div>
+	</section>
+	
+	<!-- Footer -->
+	<!-- inquire form -->
+
+	<footer class="container bg-light ">
+	<div class=" py-4   ml-3 row d-flex justify-content-center ">
+	<div class=" container min-vh-50  my-2  w-50 mr-2 col">
+	<div class="form-container mr-2">
+		<h2 class="text-center">School Inquiry Form</h2>
+		<form>
+			<div class="mb-3 center">
+				<label for="parentName" class="form-label">Parent/Guardian
+					Name</label> <input type="text" class="form-control" id="parentName"
+					required>
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label">Email Address</label> <input
+					type="email" class="form-control" id="email" required>
+			</div>
+			<div class="mb-3">
+				<label for="phone" class="form-label">Phone Number</label> <input
+					type="tel" class="form-control" id="phone" required>
+			</div>
+			<div class="mb-3">
+				<label for="childName" class="form-label">Child's Name</label> <input
+					type="text" class="form-control" id="childName" required>
+			</div>
+			<div class="mb-3">
+				<label for="grade" class="form-label">Grade Interested In</label> <select
+					class="form-select" id="grade" required>
+					<option value="">Select a grade</option>
+					<option value="Kindergarten">Kindergarten</option>
+					<option value="1st Grade">1st Grade</option>
+					<option value="2nd Grade">2nd Grade</option>
+					<option value="3rd Grade">3rd Grade</option>
+					<option value="4th Grade">4th Grade</option>
+					<option value="5th Grade">5th Grade</option>
+					<option value="6th Grade">6th Grade</option>
+					<option value="7th Grade">7th Grade</option>
+					<option value="8th Grade">8th Grade</option>
+					<option value="9th Grade">9th Grade</option>
+					<option value="10th Grade">10th Grade</option>
+					<option value="11th Grade">11th Grade</option>
+					<option value="12th Grade">12th Grade</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label for="message" class="form-label">Message</label>
+				<textarea class="form-control" id="message" rows="4" required></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit Inquiry</button>
+		</form>
+	</div>
+	</div>
+	<div class="container min-vh-50  my-5  w-50  mr-2 col">
+		<p >&copy; 2024 School Name. All Rights Reserved.</p>
+		</div>
+		</div>
+		
+	</footer>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+

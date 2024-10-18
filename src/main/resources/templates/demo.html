@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width :180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-top: 40px;
+            
+        }
+        lable{
+            cursor: pointer;
+        }
+        #uploadim{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+    <form action="photo" method="post" enctype="multipart/form-data">
+        <img src="../../../../images/fd600cb8-692e-4727-89fd-36ca319af4d8.png" id="port_img">
+        <label for="uploadim">upload image</label>
+        <input type="file" id="uploadim"  name="photo">
+        
+        <input type="text" name="name" placeholder="Enter name">
+        <input type="text" name="password" placeholder="Enter Password">
+        
+        <button type="submit">submit</button>
+    </form>
+
+</div>
+
+<script>
+    let profilepic = document.getElementById("port_img");
+    let inputpic = document.getElementById("uploadim");
+
+    inputpic.onchange = function (){
+        profilepic.src = URL.createObjectURL(inputpic.files[0]);
+    };
+</script>
+</body>
+</html>
