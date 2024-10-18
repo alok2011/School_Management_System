@@ -85,7 +85,6 @@ public class TeachersController {
 		} else {
 			model.addAttribute("studentList", studentList);
 			return "viewStudentByTeacher";
-			return "viewStudentByTeacher";
 		}
 	}
 
